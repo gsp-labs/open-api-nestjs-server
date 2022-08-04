@@ -2,8 +2,8 @@
   "name": "open-api-nestjs-server",
   "version": "1.0.0",
   "description": "Dummy nestjs server to host api's to demonstrate open-api code gen",
-  "repository": "git@github.com:gsp-labs/fp-react.git",
-  "author": "Gaurav  Pasarkar <gau041989@gmail.com>",
+  "repository": "git@github.com:gsp-labs/open-api-nestjs-server.git",
+  "author": "Gaurav Pasarkar",
   "private": true,
   "license": "MIT",
   "scripts": {

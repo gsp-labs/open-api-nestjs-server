@@ -1,0 +1,46 @@
+name: Build and publish api client to npm
+on:
+  push:
+    branches: ['main']
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies and build 🔧
+        run: npm install && npm run build
+      - name: Execute tests
+        run: npm run test
+#      - name: Execute integration tests
+#        run: npm run inttest
+#      - name: Deploy to prod
+#        run: npm run deploy:prod
+      - name: Create swagger doc
+        run: npm run generate-swagger
+      - name: Install dependencies
+        working-directory: ./api-client
+        run: npm install
+      - name: Generate client
+        working-directory: ./api-client
+        run: npm run generate-client
+      - name: Bump up version
+        working-directory: ./api-client
+        run: npm version minor
+      - name: Publish package on NPM 📦
+        working-directory: ./api-client
+        run: npm publish
+         env:
+         MY_NPM_AUTH_TOKEN: ${{ secrets.MY_NPM_AUTH_TOKEN }}
+      - name: Publish updated version to package.json
+        run: |
+          git config --global user.name 'Build'
+          git config --global user.email 'build@gsp-labs.github.com'
+          git push
+      - name: Publish tags
+        run: git push --tags

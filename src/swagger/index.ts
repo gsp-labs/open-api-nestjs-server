@@ -6,7 +6,7 @@ import * as fs from 'fs';
 const executor = (async () => {
   const app = await NestFactory.create(AppModule);
   const document = createSwaggerConfig(app);
-  fs.writeFileSync('./swagger.json', JSON.stringify(document));
+  fs.writeFileSync('./api-client/swagger.json', JSON.stringify(document));
 })();
 
 export default executor;

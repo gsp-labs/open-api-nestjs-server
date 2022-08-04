@@ -1,7 +1,11 @@
 # compiled output
 /dist
 /node_modules
-swagger.json
+
+
+api-client/swagger.json
+api-client/node_modules
+api-client/generated
 
 # Logs
 logs
