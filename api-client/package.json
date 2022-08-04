@@ -1,5 +1,5 @@
 {
-  "name": "api-client",
+  "name": "@gsp-labs/api-client",
   "version": "0.0.0",
   "description": "api client",
   "main": "generated/index.ts",
@@ -13,6 +13,10 @@
     "openapi-typescript": "^5.4.1",
     "openapi-typescript-codegen": "^0.23.0",
     "typescript": "^4.7.4"
+  },
+  "repository": {
+    "url": "git@github.com:gsp-labs/open-api-nestjs-server.git",
+    "type": "git"
   },
   "scripts": {
     "generate-client": "openapi --input ./swagger.json --output ./generated --client fetch"
