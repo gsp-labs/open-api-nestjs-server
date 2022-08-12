@@ -19,6 +19,6 @@
     "type": "git"
   },
   "scripts": {
-    "generate-client": "openapi --input ./swagger.json --output ./generated --client fetch"
+    "generate-client": "openapi --input ./swagger.json --output ./generated --client fetch --name AppClient"
   }
 }

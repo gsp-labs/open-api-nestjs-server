@@ -1,9 +1,6 @@
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { INestApplication } from '@nestjs/common';
-import { NestFactory } from '@nestjs/core';
-import * as fs from 'fs';
 import { UserModule } from '../user/user.module';
-import { AppModule } from '../app.module';
 
 const createSwaggerConfig = (app: INestApplication) => {
   const config = new DocumentBuilder()
