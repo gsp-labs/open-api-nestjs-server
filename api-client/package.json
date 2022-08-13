@@ -11,16 +11,14 @@
   "license": "MIT",
   "devDependencies": {
     "openapi-typescript-codegen": "^0.23.0",
-    "typescript": "^4.7.4",
-    "widdershins": "^4.0.1"
+    "typescript": "^4.7.4"
   },
   "repository": {
     "url": "git@github.com:gsp-labs/open-api-nestjs-server.git",
     "type": "git"
   },
   "scripts": {
-    "generate-readme": "widdershins ./swagger.json -o README.md -c --language_tabs 'javascript:JavaScript:request'",
     "generate-client": "openapi --input ./swagger.json --output ./generated --client fetch --name AppClient",
-    "generate": "yarn generate-client && yarn generate-readme"
+    "generate": "yarn generate-client"
   }
 }

@@ -6,7 +6,6 @@
 api-client/swagger.json
 api-client/node_modules
 api-client/generated
-api-client/README.md
 
 # Logs
 logs

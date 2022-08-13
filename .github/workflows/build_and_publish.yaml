@@ -30,7 +30,9 @@ jobs:
         run: npm install
       - name: Generate client
         working-directory: ./api-client
-        run: npm run generate-client
+        run: npm run generate
+        env:
+          MY_NPM_AUTH_TOKEN: ${{ secrets.MY_NPM_AUTH_TOKEN }}
       - name: Bump up version
         working-directory: ./api-client
         run: npm version minor
@@ -38,7 +40,7 @@ jobs:
         working-directory: ./api-client
         run: npm publish
         env:
-         MY_NPM_AUTH_TOKEN: ${{ secrets.MY_NPM_AUTH_TOKEN }}
+          MY_NPM_AUTH_TOKEN: ${{ secrets.MY_NPM_AUTH_TOKEN }}
       - name: Configure git
         run: |
           git config --global user.name 'Build'
